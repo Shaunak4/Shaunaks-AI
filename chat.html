@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ask Me Anything</h1>
+        <textarea id="prompt" placeholder="Type your question..."></textarea>
+        <button onclick="sendPrompt()">Ask</button>
+        <div id="responseBox"></div>
+    </div>
+
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById("prompt").value;
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt })
+            });
+            const data = await response.json();
+            document.getElementById("responseBox").innerText = data.response;
+        }
+    </script>
+</body>
+</html>
