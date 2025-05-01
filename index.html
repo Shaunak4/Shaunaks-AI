@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaunak's AI - Education</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Shaunak's AI</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div id="login-error" class="error-message"></div>
+        </form>
+    </div>
+
+    <div class="main-container" style="display:none;">
+        <header>
+            <h1>Shaunak's AI - Learn Something New!</h1>
+        </header>
+        <div class="chat-area">
+            <div id="output-area"></div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Ask me a question...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
